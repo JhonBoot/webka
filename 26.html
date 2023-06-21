@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>burger-menu</title>
+</head>
+<style type="text/css">
+
+	#menu_toggle{ /*input checkbox*/
+		opacity: 0; /*prozrachnost*/
+	}
+
+	.menu_btn{ /*label*/
+		/*display: flex;*/ /* используем flex для центрирования содержимого */
+		/*align-items: center;*/  /* центрируем содержимое кнопки */
+		position: absolute;
+		top: 30px;
+		left: 20px;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	/* добавляем "гамбургер" */
+	/*	> - поиск среди всех прямых потомков.*/
+	.menu_btn > span, /*kara linayalar*/
+	.menu_btn > span::before, /*kara linayalar*/
+	.menu_btn > span::after { /*kara linayalar*/
+	  position: absolute;
+	  width: 100%;
+	  height: 2px;
+	  background-color: black;
+	}
+
+	.menu_btn > span::before {
+	  content: '';
+	  top: -8px; /*liniyalar arakashyktygy*/
+	}
+	.menu_btn > span::after {
+	  content: '';
+	  top: 8px; /*liniyalar arakashyktygy*/
+	}
+
+	/* контейнер меню */
+	.menu_box {
+	  display: block;
+	  position: absolute;
+	  top: 0;
+	  left: -100%;		/*sol zhagynda tygylip turadi*/
+	  width: 300px;
+	  height: 100%;
+	  margin: 0;
+	  padding: 80px 0;
+	  text-align: center;
+	  background-color: lightblue;
+	}
+
+		/* элементы меню */
+	.menu_item {
+	  display: block;
+	  padding: 12px 24px;
+	  color: black;
+	  font-family: sans-serif;
+	  font-size: 19px;
+	  font-weight: 400;
+	  text-decoration: none;
+	}
+	.menu_item:hover {
+	  background-color: yellow;
+	}
+
+	#menu_toggle:checked ~ .menu_btn > span { /*ustindegi liniyany ainaldyrady*/
+	  transform: rotate(45deg);
+	}
+	#menu_toggle:checked ~ .menu_btn > span::before { /*ortadagy liniya*/
+	  top: 0;
+	}
+	#menu_toggle:checked ~ .menu_btn > span::after { /*astyndagy liniya*/
+	  top: 0;
+	  transform: rotate(90deg);
+	}
+
+	#menu_toggle:checked ~ .menu_box {
+	  visibility: visible;
+	  left: 0;
+	}
+
+</style>
+<body>
+	<div class="burger-menu">
+		<input type="checkbox" id="menu_toggle"><!-- toggle znachit perekluchyat -->
+		<label class="menu_btn" for="menu_toggle">
+			<span></span>
+		</label>
+
+		<ul class="menu_box">
+			<li><a class="menu_item" href="">Home</a></li>
+			<li><a class="menu_item" href="">Page2</a></li>
+			<li><a class="menu_item" href="">Page3</a></li>
+			<li><a class="menu_item" href="">Page4</a></li>
+		</ul>
+	</div>
+</body>
+</html>

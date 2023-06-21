@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+	<div>
+		<input type="checkbox" id="check1">
+		<label for="check1">label</label><br>
+		<input type="checkbox" id="check2">
+		<label for="check2">label</label>
+	</div>
+</body>
+
+<style type="text/css">
+	* {
+	padding: 0;
+	margin: 0;
+}
+
+body div {
+	margin: 100px auto;
+	font-size: 40px;
+	max-width: 1000px;
+	text-align: center;
+	padding: 100px;
+}
+
+input[type=checkbox] {
+	width: 20px;
+	height: 20px;
+}
+
+input:checked + label {
+	color: red;
+}
+</style>
+
+</html>
