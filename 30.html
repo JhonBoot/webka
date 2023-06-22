@@ -1,0 +1,57 @@
+<div class="sidenav">
+  <h2 class="sidenav-title">Новости</h2>
+  <div class="news-container">
+    <ul class="news-list">
+      <li class="news-item">
+        <h3 class="news-title">Заголовок новости 1</h3>
+        <p class="news-content">Текст новости 1</p>
+      </li>
+      <!-- Дополнительные элементы новостей -->
+    </ul>
+  </div>
+</div>
+
+
+
+<style type="text/css">
+.sidenav {
+  width: 250px;
+  height: 400px; /* Фиксированная высота панели */
+  background-color: #f2f2f2;
+  padding: 20px;
+  overflow-y: auto; /* Включение вертикального скроллинга */
+}
+
+.sidenav-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.news-container {
+  max-height: 100%; /* Занимает всю доступную высоту панели */
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  margin-bottom: 15px;
+}
+
+.news-title {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.news-content {
+  font-size: 14px;
+  color: #999;
+}
+
+
+</style>

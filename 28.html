@@ -1,0 +1,95 @@
+
+
+<style type="text/css">
+    .slider{
+        top: 50px;
+        max-width: 80%;
+        position: relative;
+        margin: auto;
+        height: 300px;
+    }
+
+    .slider .item img {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+        border-radius: 50px
+    }
+
+    .previous, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: 800;
+        font-size: 26px;
+    }
+    .next {
+        right: 0;
+    }
+
+    .slider .previous:hover,
+    .slider .next:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+</style>
+<script type="text/javascript" defer="">
+    let slideIndex = 1;
+
+    showSlides(slideIndex);
+
+    function nextSlide() {
+        showSlides(slideIndex += 1);
+    }
+
+    function previousSlide() {
+        showSlides(slideIndex -= 1);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("item");
+
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
+        for (let slide of slides) {
+            slide.style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
+<body>
+
+<div class="slider">
+
+    <div class="item">
+      <img src="img1.jpg">
+    </div>
+  
+    <div class="item">
+      <img src="img2.jpg">
+    </div>
+  
+    <div class="item">
+      <img src="img3.jpg">
+    </div>
+  
+    <a class="previous" onclick="previousSlide()"><</a>
+    <a class="next" onclick="nextSlide()">></a>
+
+  </div>
+
+</body>
